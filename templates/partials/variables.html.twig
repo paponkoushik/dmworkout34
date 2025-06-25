@@ -5,3 +5,26 @@
 {% block render_block %}{% endblock %}
 
 {% do assets.addJs('theme://assets/js/animation.js', {group: 'bottom', loading: 'defer'}) %}
+
+<script>
+ $(document).ready(function(){
+    $('.counter').each(function () {
+        var $this = $(this);
+        var countTo = $this.attr('data-count');
+
+        $({ countNum: $this.text() }).animate(
+            { countNum: countTo },
+            {
+            duration: 2000,
+            easing: 'swing',
+            step: function () {
+                $this.text(Math.floor(this.countNum));
+            },
+            complete: function () {
+                $this.text(this.countNum);
+            },
+            }
+        );
+    });
+ })
+</script>
