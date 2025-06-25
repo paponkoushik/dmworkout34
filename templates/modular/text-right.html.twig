@@ -6,8 +6,9 @@
 {% block render_block %}
     <div class="paragraph text-right text-right-animation {{ module.classes }}">
         <div class="container text-right-container">
-            <div class="paragraph-image">
-                <img class="" src="{{ image.url }}" alt="icon"/>
+            <div class=" video-container">
+                {# <img class="" src="{{ image.url }}" alt="icon"/> #}
+                <video id="myVideo" muted playsinline loop class="lazy-video" width="100%" preload="none" poster="{{ url('theme://images/video-poster.webp') }}" data-src="{{ url('theme://images/video.mp4') }}"></video>
             </div>
             <div class="text-right-text">
                 {% if module.subtitle is not empty %}
@@ -18,7 +19,7 @@
                 <div class="block-title">
                     <h3>{{ module.title.translatable|striptags('<span>')|raw }}</h3>
                 </div>
-                <p>{{ page.content|raw }}</p>
+                {{ page.content|raw }}
 
                 {% for button in module.buttons  %}
                     <a class="button" href="{{ url(grav.language.getActive ~ '/about-us') }}">
@@ -28,4 +29,46 @@
             </div>
         </div>
     </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('myVideo');
+    
+    // Essential settings for autoplay
+    video.muted = true; // Required for autoplay
+    video.playsInline = true; // For iOS
+    video.loop = true;
+    video.preload = 'metadata'; // Optimized lazy loading
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Lazy load if needed
+                if (!video.src && video.dataset.src) {
+                    video.src = video.dataset.src;
+                    video.load();
+                }
+                
+                // Attempt to play (no fallback button)
+                video.play().catch(error => {
+                    console.log('Autoplay blocked (normal on mobile):', error);
+                });
+            } else {
+                video.pause();
+            }
+        });
+    }, { 
+        threshold: 0.7,
+        rootMargin: '0px 0px -50px 0px' // Triggers slightly early
+    });
+
+    observer.observe(video);
+
+    // Optional: Click to play/pause (remove if unwanted)
+    video.addEventListener('click', () => {
+        if (video.paused) video.play();
+        else video.pause();
+    });
+});
+</script>
 {% endblock %}
