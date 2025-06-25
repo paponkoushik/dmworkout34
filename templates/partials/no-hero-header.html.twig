@@ -1,11 +1,17 @@
 {% set breadcrumb_text_color = 'text-primary' %}
+{% set noHeroContent = page.header.no_hero_content %}
+{% set bg = page.media[noHeroContent.section_background_image].url ?? '' %}
 
-<div class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 no-hero-header bg-primary-light">
+
+<div class="{{ max_width }} {{ section_padding }} flex-1 w-full py-24 no-hero-header bg-primary-light" 
+	style="{% if(bg) %}background-image: url('{{ bg }}'){% endif %}">
+	{# style="{% page.parent().slug == 'about-us' %}background-image: url('theme://images/footer-logo.png'){% endif %}"> #}
 	<div class="paragraph no-hero slide-up container">
 		<div class="no-hero-title-wrapper">
 			<h1 class="display-1 mb-3 {{breadcrumb_text_color}}">{{ title }}</h1>
 			<nav class="d-inline-block no-hero-breadcrumb" aria-label="breadcrumb">
 				<ol class="breadcrumb">
+				
 					{% for index, link in links %}
 						{% set last = index + 1 == links|length %}
 						<li class="breadcrumb-item {{breadcrumb_text_color}} {{ last ? 'active' : '' }}">

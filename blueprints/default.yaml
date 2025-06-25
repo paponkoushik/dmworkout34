@@ -1,0 +1,24 @@
+title: Dynamic Content
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          fields:
+            no_hero_content_section:
+              ordering@: 3
+              type: section
+              title: No Hero Content Section
+              underline: true
+
+              fields:
+                header.no_hero_content.section_background_image:
+                  type: pagemediaselect
+                  label: Section Background Image
+                  preview_images: true
+
+
+
+                

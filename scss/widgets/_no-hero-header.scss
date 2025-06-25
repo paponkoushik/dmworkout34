@@ -1,18 +1,43 @@
+.page-login .no-hero-header {
+    background-image: url(../../images/no-hero/login.webp);
+    @include tablet {
+      background-image: url(../../images/no-hero/login-small.webp);
+    }
+}
+.profile-page .no-hero-header {
+    background-image: url(../../images/no-hero/profile.webp);
+    @include tablet {
+      background-image: url(../../images/no-hero/profile-small.webp);
+    }
+}
+.page-contact .no-hero-header {
+    background-image: url(../../images/no-hero/contact-us.webp);
+    @include tablet {
+      background-image: url(../../images/no-hero/contact-us-small.webp);
+    }
+}
 .no-hero-header {
-  background: var(--no-hero-bg);
-  /* User pages */
+
+  background-image: url(../../images/no-hero/no-hero-1.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
   .paragraph.no-hero {
-    background: var(--no-hero-bg);
+    // background: var(--no-hero-bg);
 
     @include desktop-small {
       margin-top: $header-gap;
     }
+
     .no-hero-title-wrapper {
-      padding: 6.25rem 1rem;
+      padding: 160px 1rem 116px;
+
       @include desktop-small {
         @include padding(padding-sm);
         padding: 5rem 1rem;
       }
+
       h1 {
         text-align: center;
         word-wrap: break-word;
@@ -20,6 +45,7 @@
         color: var(--no-hero-text) !important;
         // text-transform: uppercase;
         @include typography(display-xl, bold);
+
         @include desktop-small {
           @include typography(display-md, bold);
         }
@@ -48,15 +74,18 @@
           display: flex;
           align-items: center;
           @include typography(text-xl, regular);
+
           @include desktop-small {
             @include typography(text-lg, regular);
           }
+
           color: var(--no-hero-text) !important;
 
           a {
             text-decoration: none;
             color: var(--no-hero-text) !important;
             @include typography(text-xl, regular);
+
             @include desktop-small {
               @include typography(text-lg, regular);
             }
@@ -78,5 +107,3 @@
   }
 
 }
-
-

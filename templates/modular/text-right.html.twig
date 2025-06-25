@@ -3,13 +3,24 @@
 {% set module = page.header.text_right %}
 {% set image = page.media[page.header.text_right.image] %}
 
+
+
 {% block render_block %}
+{# {{dd(page.parent().slug)}} #}
     <div class="paragraph text-right text-right-animation {{ module.classes }}">
         <div class="container text-right-container">
-            <div class=" video-container">
+        {% if page.parent().slug == 'about-us'%}
+            <div class="paragraph-image">
+                <img class="" src="{{ image.url }}" alt="icon"/>
+            </div>
+        {% else %}
+        <div class="video-container">
                 {# <img class="" src="{{ image.url }}" alt="icon"/> #}
                 <video id="myVideo" muted playsinline loop class="lazy-video" width="100%" preload="none" poster="{{ url('theme://images/video-poster.webp') }}" data-src="{{ url('theme://images/video.mp4') }}"></video>
             </div>
+        {% endif %}
+        
+            
             <div class="text-right-text">
                 {% if module.subtitle is not empty %}
                     <div class="sub-title">
