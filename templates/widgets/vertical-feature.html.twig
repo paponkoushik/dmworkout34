@@ -1,0 +1,22 @@
+<div class="feature feature-vertical flex-column {{ module.classes|replace({',' : ' '}) }}">
+	<div class="feature-container">
+		{% set icon = page.media[feature_block.icon] %}
+		{% if module.icon_pattern == 'rounded' or module.icon_pattern == 'square' %}
+			<div class="icon-container {{ module.icon_pattern }}">
+				<img class="icon" src="{{ icon.url }}"/></div>
+		{% else %}
+			<div>
+				<img class="icon" src="{{ icon.url }}"/></div>
+		{% endif %}
+		<h4 class="feature-title">{{ feature_block.title.translatable }}</h4>
+	</div>
+	<p>{{ feature_block.description.translatable }}</p>
+
+	<a href="{{ grav.language.getActive }}/#modular_pricing" class="button">
+		{{ feature_block.button_title.translatable }}
+
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewbox="0 0 24 25" fill="none">
+			<path d="M12 16.5L16 12.5M16 12.5L12 8.5M16 12.5H8M22 12.5C22 18.0228 17.5228 22.5 12 22.5C6.47715 22.5 2 18.0228 2 12.5C2 6.97715 6.47715 2.5 12 2.5C17.5228 2.5 22 6.97715 22 12.5Z" stroke="#191B1F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+	</a>
+</div>

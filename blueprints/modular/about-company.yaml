@@ -1,0 +1,56 @@
+title: About Company
+extends@: default
+
+form:
+  fields:
+    tabs:
+      fields:
+        content:
+          type: tab
+          title: Content
+
+          fields:
+            header.contents.title.translatable:
+              type: text
+              label: Title
+              classes: 'translatable' # Corrected typo in "classes"
+            
+            header.contents.subtitle.translatable:
+              type: text
+              label: Sub-title
+              classes: 'translatable' # Corrected typo here as well
+
+            header.contents.another.translatable:
+              type: text
+              label: another
+              classes: 'translatable' # Corrected typo here as well
+            
+            header.contents.parent_classes:
+              label: Parent Classes
+              help: You can use multiple predefined or custom classes. Separate each class by a space. Example - bg-primary, bg-secondary
+              type: text
+              
+            header.contents.child_classes:
+              label: Child Classes
+              type: text
+              help: You can use multiple predefined or custom classes. Separate each class by a space. Example - bg-primary, bg-secondary
+
+            header.contents.image:
+              type: pagemediaselect
+              label: Image
+
+            header.contents.buttons:
+              type: list
+              label: Buttons
+              style: vertical
+              fields:
+                .text.translatable:
+                  type: text
+                  label: Button Text
+                  classes: 'translatable'
+                .link:
+                  type: text
+                  label: Button Link
+
+            header.media_order:
+              ordering@: 99

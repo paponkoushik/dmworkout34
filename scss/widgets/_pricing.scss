@@ -1,0 +1,255 @@
+// .page-about {
+//   .pricings {
+//     background-color: var(--bg-body);
+//   }
+// }
+
+.pricings {
+  display: flex;
+  padding: 5rem 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  align-self: stretch;  
+  margin: auto;
+  background-color: var(--pricing-bg-container);
+
+  @include desktop-small{
+    padding: 4rem 1rem;
+  }
+
+  h3 {
+    .block-title {
+      @include typography(display-lg, bold);
+      @include desktop-small {
+        @include typography(display-md, bold);
+      }
+      
+    }
+    background: var(--color-pricing-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    position: relative;
+    
+  }
+
+  h3::before{
+    content: " ";
+    position: absolute;
+    height: 3px;
+    width: 20px;
+    left: -38px;
+    top: 40%;
+    background: var(--color-primary);
+    border-radius: 8px;
+  }
+
+  h4 span {
+    color: var(--color-section-subtitle);
+    
+    @include typography(text-lg, semibold);
+
+    @include desktop-small {
+      @include typography(text-md, semibold);
+    }
+  }
+
+
+  .pricings-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    @include padding(padding-lg);
+    // background: var(--pricing-bg);
+
+    @include desktop-small {
+      padding: 0;
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    .pricing {
+      display: flex;
+      padding-bottom: 2rem;
+      gap: 2rem;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease-in-out; /* Add a smooth transition effect */
+      align-items: center;
+      flex: 1 0 31%;
+      max-width: 31%;
+      min-width: 384px;
+      align-self: stretch;
+      border-radius: 0;
+      // border: 1px solid var(--color-primary) ;
+      // border-image: var(--color-primary) 1;
+      // border: 1px solid var(--border-color);
+      background: var(--pricing-bg);
+      box-shadow: 0px 4px 16px 0px rgba(51, 51, 51, 0.08), 0px 4px 4px 0px rgba(51, 51, 51, 0.04);
+      opacity: 0;
+
+      @include mobile {
+        max-width: 600px;
+        width: 100%;
+        min-width: 200px;
+      }
+
+      &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adjust the values as needed */
+        transform: translateY(-.15rem);
+      }
+
+      .pricing-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+
+        & > .price {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+          padding: 2rem 2rem 0;
+          align-self: stretch;
+          // background: var(--color-primary);
+          color: var(--pricing-text);
+          // font-family: var(--default-font-2);
+
+          @include desktop-small{
+            padding: 2rem 1rem 0;
+          }
+
+          .type {
+            display: flex;
+            padding: 0.375rem 0.75rem;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0.625rem;
+            border-radius: 0.5rem;
+            background: transparent;
+            color: var(--color-primary);
+            text-align: center;
+            text-transform: uppercase;
+
+            @include typography(display-xs,semibold);
+            @include desktop-small {
+              @include typography();
+            }
+
+            .type-wrap {
+              color: var(--pricing-text);
+              // font-family: var(--default-font-2);
+              @include typography(display-xs,semibold);
+            }
+          }
+
+          .pricing-group {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: end;
+            align-self: stretch;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+
+            .pricing-wrap {
+              .price {
+                color: var(--color-pricing-title);
+                text-align: center;
+                font-style: normal;
+                // font-family: var(--default-font-2);
+                @include typography(display-lg, bold);
+
+                @include desktop-small {
+                  @include typography(display-lg, bold);
+                }
+              
+              }
+            }
+
+            .trial p {
+              text-align: center;
+              font-style: normal;
+              @include typography(display-xs,semibold);
+            }
+
+            .text-sm {
+              color: var(--color-pricing-title);
+              font-style: normal;
+              text-align: center;
+              // font-family: var(--default-font-2);
+              @include typography(text-md,medium);
+            }
+          }
+
+          & > p {
+            color: var(--pricing-text);
+            // font-family: var(--default-font-2);
+            text-align: center;
+            font-style: normal;
+            @include typography(display-xs,semibold);
+          }
+        }
+
+        .benefits {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+          padding: 2rem;
+          align-self: stretch;
+
+          @include desktop-small{
+            padding: 2rem 1rem;
+          }
+
+          .benefit {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+
+            .streamline {
+              color: var(--color-text-dark);
+              font-style: normal;
+              @include typography(text-lg,regular);
+            }
+          }
+        }
+      }
+
+      & > div:not(.pricing-content) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: stretch;
+        padding: 0 2rem;
+
+        @include desktop-small {
+          padding: 0 1rem;
+        }
+
+        .pricing-btn {
+          width: 100%;
+          padding: 20px 40px;
+          // border-radius: .5rem;
+          text-align: center;
+          background: var(--bg-pricing-button);
+          color: var(--color-pricing-button);
+          @include typography(text-xl,medium);
+        }
+      }
+    }
+  }
+}

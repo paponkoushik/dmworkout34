@@ -1,0 +1,26 @@
+{% set navbar_text_color = '' %}
+{% set navbar_button_style = 'button' %}
+
+<header class="header" id="header">
+	<div class="container">
+		<div class="header-wrapper">
+			<div class="nav-left">
+				{% include 'widgets/logo.html.twig' with { position: 'header' } %}
+				{% include 'widgets/menu.html.twig' %}
+			</div>
+			{% include 'widgets/header-button.html.twig' %}
+		</div>
+		<!-- End header-wrapper -->
+	</div>
+</header>
+
+ <script>
+  window.addEventListener('scroll', function () {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>

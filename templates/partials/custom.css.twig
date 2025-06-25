@@ -1,0 +1,29 @@
+{{ theme['css_scripts'] }}
+
+.profile-page .bg-white {
+    background: var(--color-white) !important;
+}
+{#.orders-table-wrapper.bg-white{#}
+{#    background-color: var(--color-white)!important;#}
+{#}#}
+.unsubscribe-section {
+    margin: 0 !important;
+}
+
+.login-form {
+    .form-field {
+        &:first-child {
+            &::before {
+                content: "{{ 'VARIABLE.EMAIL'|t }}";
+                {# color: #fff; #}
+            }
+        }
+
+        &:nth-child(2) {
+            &::before {
+                content: "{{ 'VARIABLE.PASSWORD'|t }}";
+                {# color: #fff; #}
+            }
+        }
+    }
+}

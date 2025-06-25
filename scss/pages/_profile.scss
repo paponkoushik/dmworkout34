@@ -1,0 +1,189 @@
+.btn__simple.my-orders {
+  text-decoration: none;
+  @include typography(text-xl);
+  color: var(--profile-text);
+  display: block;
+  text-align: center;
+  width: calc(50% - 50px);
+  @include desktop-small {
+    width: 100%;
+    display: inline-block;
+  }
+  @include mobile{
+    width: 100%;
+    display: block;
+  }
+  svg {
+    vertical-align: middle;
+    margin-top: -4px;
+  }
+}
+.profile-page {
+  // background: var(--bg-body) !important;
+  // background-color: var(--bg-body) !important;
+  // .no-hero-header, .paragraph.no-hero{
+  //   background-color: var(--color-white) !important;
+  // }
+  .content-section {
+    // padding: 42px 2rem;
+    padding: 64px 2rem 2rem;
+    background: var(--profile-bg);
+    // margin-top: 2rem;
+    // border-radius: 32px 32px 0px 0px ;
+    @include desktop-small {
+      padding-bottom: 0 !important;
+      text-align: center;
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
+    }
+    a {
+      padding: 20px 40px;
+      //background: var(--color-white);
+      //color: var(--color-primary);
+      // border-radius: 8px;
+
+      background: var(--color-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      border: 1px solid var(--color-primary);
+      // border-image: var(--color-primary) 1;
+
+      svg {
+        stroke: var(--color-primary);
+      }
+    }
+  }
+}
+.content-section-profile {
+  display: flex;
+  justify-content: center;
+  gap: 5.625rem;
+  align-self: stretch;
+  background: var(--profile-bg);
+  color: var(--profile-text);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+  align-items: center;
+  //margin-bottom: $content-bottom-margin;
+  flex-basis: 45%;
+  @include desktop-small {
+    flex-direction: column;
+    padding: 1.5rem 1rem 4rem;
+    gap: 2rem;
+  }
+  .paragraph-column > .form-actions {
+    margin-top: 35px;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: row-reverse;
+    @include mobile {
+      flex-direction: column-reverse;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+
+  .paragraph-column {
+    .form-field input, .form-field textarea {
+      // border: 1px solid #98A2B3;
+      // border-radius: 8px;
+    }
+    .form-input-wrapper {
+      input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+        transition: background-color 500000s ease-in-out 0s, color 5000s ease-in-out 0s !important;
+      }
+      input:focus {
+        outline: none;
+        border-color: #98A2B3;
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+      }
+    }
+
+
+    @include desktop-small {
+      width: 100%;
+    }
+    label.error{
+      bottom: 0;
+    }
+    &:first-child {
+      h2 {
+        // display: none;
+        color: transparent;
+        margin-bottom: 20px;
+        @include typography(display-lg, semibold);
+        letter-spacing: -0.96px;
+        @include mobile {
+          @include typography(display-sm, medium);
+        }
+      }
+    }
+    &:last-child {
+      padding: 64px;
+      background: var(--bg-body);
+      color: var(--color-white);
+      border-radius: 0;
+      margin-bottom: 0;
+
+      h2 {
+        // color: var(--color-white);
+        margin-bottom: 20px;
+        @include typography(display-lg, semibold);
+        letter-spacing: -0.96px;
+        @include mobile {
+          @include typography(display-sm, medium);
+        }
+      }
+      .button{
+        background: var(--color-tertiary);
+        text-align: center;
+      }
+      @include mobile {
+        padding: 44px 16px;
+      }
+    }
+  }
+  @media all and (max-width: 490px) {
+    display: block;
+    .paragraph-column {
+      width: 100%;
+      margin-bottom: 45px;
+    }
+    .form-actions a {
+      margin-bottom: 10px;
+    }
+  }
+  .button,
+  button {
+    width: 100%;
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 20px ;
+    @include typography(text-xl, medium);
+    text-align: center;
+    // border-radius: 8px;
+
+    @media  (max-width: 1224px){
+      padding: 20px 17px;
+    }
+  }
+  form[name=user-profile] .form-field:nth-child(1), form[name=user-profile] .form-field:nth-child(2) {
+    width: calc(50% - 1rem);
+    display: inline-block;
+    @include mobile {
+      width: 100%;
+    }
+  }
+  form[name=user-profile] .form-field:nth-child(2) {
+    float: right;
+  }
+  .form-field input, .form-field textarea {
+
+    // border: 1px solid #98A2B3;
+    // border-radius: 8px;
+    // box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+}

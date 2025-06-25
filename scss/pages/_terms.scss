@@ -1,0 +1,35 @@
+.page-terms .content-section{
+  padding: 2.5rem 2rem !important;
+  @include desktop-small{
+    padding: 2.5rem 1rem !important;
+  }
+}
+.terms {
+  color: var(--color-text-dark);
+  .terms-section .belong-overview {
+    font-size: 1.25rem !important;
+  }
+  h1 {
+    font-size: 1.25rem !important;
+  }
+}
+.content-section .terms{
+  // background: var(--policy-bg-container);
+  .terms-area {
+    display: none !important;
+
+    &.active {
+      display: block !important;
+    }
+  }
+
+  .language-switcher {
+    display: none;
+  }
+}
+// .page-terms {
+//   background: var(--policy-bg-container);
+// }
+// .base {
+//   background: var(--policy-bg-container);
+// }

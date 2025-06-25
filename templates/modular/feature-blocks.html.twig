@@ -1,0 +1,38 @@
+{% extends 'partials/variables.html.twig' %}
+
+{% set module = page.header.module %}
+
+{% block render_block %}
+	<div class="features feature-animation">
+		<div class="features-header-section container">
+			{% if module.subtitle %}
+				<h4>
+					{# <svg xmlns="http://www.w3.org/2000/svg" width="21" height="4" viewBox="0 0 21 4" fill="none">
+						<path d="M2 2L19 2" stroke="#58D5BA" stroke-width="3" stroke-linecap="round"/>
+					</svg> #}
+					<span>{{ module.subtitle.translatable }}</span>
+				</h4>
+			{% endif %}
+
+			{% if module.title %}
+				<h3 class="block-title">{{ module.title.translatable }}</h3>
+			{% endif %}
+
+			{% if module.description %}
+				<p>{{ module.description.translatable }}</p>
+			{% endif %}
+		</div>
+
+		<div class="features-container container">
+			{% for feature_block in page.header.feature_blocks %}
+				{% if feature_block.description != '' and feature_block.title != '' %}
+					{% if module.pattern == 'horizontal' %}
+						{% include 'widgets/horizontal-feature.html.twig' with {feature_block: feature_block, module:module } %}
+					{% else %}
+						{% include 'widgets/vertical-feature.html.twig' with {feature_block: feature_block, module:module } %}
+					{% endif %}
+				{% endif %}
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}

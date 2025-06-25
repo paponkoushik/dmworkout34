@@ -1,0 +1,201 @@
+.hero {
+  display: flex;
+  padding: 160px 0rem;
+  align-items: center;
+  gap: 0.625rem;
+  align-self: stretch;
+  background-color: var(--hero-bg-container);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include desktop-small {
+    padding: 5rem 0rem;
+    margin-top: 87px;
+  }
+
+
+
+
+  h1 {
+    max-width: 100%;
+    // @include desktop-small {
+    //   @include typography(display-lg, bold);
+    // }
+
+    @include typography(display-xl, bold);
+    color: var(--hero-title);
+
+    span {
+      color: var(--hero-highlight) !important;
+    }
+  }
+
+  &.medium {
+    height: 33.4375rem;
+
+    @include desktop-small {
+      height: auto;
+    }
+  }
+
+  .text_image_center {
+    flex-direction: column;
+    gap: 2rem !important;
+    // flex-basis: 70%;
+    text-align: center;
+  }
+
+  .text_right__image_left {
+    flex-direction: row-reverse;
+  }
+
+  .hero-container {
+    display: flex;
+    @include padding(padding-lg);
+    justify-content: center;
+    gap: 4.5rem;
+    //background: var(--hero-bg);
+
+    @include mobile {
+      width: 100%;
+    }
+
+    @include desktop-small {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.625rem;
+      @include padding(padding-sm);
+    }
+
+    ::before{
+      position: fixed;
+      content: "";
+      box-shadow: 0 0 100px 40px #ffffff08;
+      top: -10%;
+      left: -100%;
+      transform: rotate(-45deg);
+      height: 60rem;
+      transition: .7s all;
+    }
+    &:hover{
+      filter: brightness(1.3);
+      ::before{
+        filter: brightness(.5);
+        top: -100%;
+        left: 200%;
+      }
+    }
+
+    .hero_text_center{
+      align-items: center;
+    }
+
+    .hero_text_left{
+      align-items: flex-start;
+      flex: 1 0 31% !important;
+    }
+
+    .hero-text {
+      display: flex;
+      text-align: left;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: start;
+      // max-width: 70%;
+
+      border-radius: 0;
+      // border: 1px solid var(--color-white, #FFF);
+      // background: rgba(0, 0, 0, 0.50);
+      // backdrop-filter: blur(8px);
+      // padding: 2.625rem;
+
+
+      @include desktop-small {
+        // max-width: 100%;
+        text-align: left;
+        align-items: center;
+        // padding: 2rem 1rem;
+        .button {
+          // margin: 0 auto;
+          color: var(--color-button);
+          background: var(--bg-button);
+        }
+      }
+
+      p {
+        @include typography(text-xl, regular);
+
+        @include desktop-small {
+          @include typography(text-lg, regular);
+        }
+
+        color: var(--hero-text);
+      }
+
+      .hero-title {
+        @include typography(display-xl,bold);
+        // text-transform: uppercase;
+        // font-family: var(--default-font-2);
+        // @include mobile {
+        //   font-style: normal;
+        //   @include typography(display-lg,bold);
+        //   /* 57.6px */
+        // }
+
+        color: var(--hero-title);
+      }
+
+      .button{
+        align-self: flex-start;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-radius: 12px;
+        background: #F4E757;
+        box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+        border: 1px solid var(--color-white);
+        padding: 16px 28px;
+        @include typography(text-lg,semibold);
+
+        @include desktop-small {
+          @include typography(text-lg, semibold);
+        }
+
+        // background: var(--bg-hero-button);
+        //color: var(--color-hero-button);
+
+        span {
+          background: var(--color-button);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: rgba(0, 0, 0, 0);
+        }
+        svg {
+          path {
+            stroke: var(--color-button);
+          }
+        }
+      }
+      gap: 2rem;
+      flex: 1 0 60%;
+    }
+
+    .hero-image {
+      flex: 1 0 40%;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+
+
+      @include desktop-small {
+        // order: 1;
+        max-width: 500px;
+      }
+      margin: 0 auto;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

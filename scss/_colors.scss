@@ -1,0 +1,134 @@
+:root {
+
+  // For Text
+  --text-font-size: 1rem;
+  --text-sm-font-size: 0.75rem;
+  --text-md-font-size: 1.125rem;
+  --text-lg-font-size: 1.5rem;
+  --text-error-font-size: 1rem;
+
+  // For Title
+  --title-font-size: 1.25rem;
+  --title-md-font-size: 2rem;
+  --title-lg-font-size: 2.5rem;
+  --title-xl-font-size: 3.2rem;
+  --subtitle-font-size: 1.1rem;
+  --title-mobile-menu-font-size: 1rem;
+
+  --shadow: 0px 0px 2px 0px rgba(204, 204, 204, 0.4);
+
+  --color-white: #FFFFFF;
+  
+  --color-primary: #191B1F;
+  // --color-secondary: #1C1C1C;
+  --color-tertiary: #F04438;
+  --bg-body: #191B1F;
+  // --bg-secondary: #F5F5F5;
+  // --border-color: #98A2B3;
+
+  // --color-text-light: #B2BAC4;
+  --color-text-dark: #121212;
+  --color-black: #0B0C0E;
+  --color-grey: #F9FAFB;
+
+  --panel-header-bg: var(--color-white);
+  --panel-header-text: var(--color-text-dark);
+  --panel-footer-bg: var(--color-primary);
+  --panel-footer-text: var(--color-white);
+  
+  --hero-bg-container: var(--color-primary);
+  --hero-bg: var(--color-white);
+  --hero-title: var(--color-white);
+  --hero-text: var(--color-white);
+  --hero-highlight: var(--color-white);
+
+  --color-section-title: var(--color-text-dark);
+  --color-section-subtitle: var(--color-secondary);
+
+  --feature-bg-container: var(--bg-secondary);
+  --feature-bg: var(--color-white);
+  --feature-text: var(--color-text-dark);
+
+  --course-bg-container: var(--bg-body);
+  --course-bg: var(--color-text-light);
+  --course-title: var(--color-primary);
+  --course-text: var(--color-primary);
+
+  --about-listing-bg-container: var(--color-text-light);
+  --about-listing-title: var(--color-primary);
+  --about-listing-text: var(--color-primary);
+  --color-about-company-sub-title: var(--color-secondary);
+
+  // --text-bg-container: var(--bg-body);
+  --text-bg-container: var(--color-black);
+  --text-bg: var(--bg-body);
+  --text-text: var(--color-white);
+  
+  --pricing-bg-container: var(--bg-secondary);
+  --pricing-bg: var(--color-white);
+  --pricing-text: var(--color-primary);
+  --color-pricing-title: var(--color-text-dark);
+
+
+  // Contact us page
+  --contact-bg-container: var(--color-white);
+  --contact-form-bg: var(--color-primary);
+  --contact-form-text: var(--color-text-dark);
+  --contact-info-bg: var(--bg-body);
+  --contact-info-text: var(--color-white);
+
+  --no-hero-bg-container: var(--color-primary);
+  --no-hero-bg: var(--color-primary);
+  --no-hero-text: var(--color-white);
+
+  --login-bg-container: var(--color-primary);
+  --login-bg: var(--color-white);
+  --login-text: var(--color-white);
+
+  --profile-bg-container: var(--color-white);
+  --profile-bg: var(--color-white);
+  --profile-text: var(--color-text-dark);
+
+  --order-bg-container: var(--color-white);
+  --order-bg: var(--color-white);
+  --order-text: var(--color-text-dark);
+
+  --unsubscribe-bg-container: var(--color-white);
+  --unsubscribe-bg: var(--color-primary);
+  --unsubscribe-text: var(--color-white);
+
+  --policy-bg-container: var(--bg-body);
+  
+  --bg-button: var(--color-primary);
+  --bg-hero-button: var(--color-white);
+  --bg-pricing-button: var(--color-primary);
+
+  --bg-contact-btn: var(--color-primary);
+  --color-contact-btn: var(--color-white);
+
+  --bg-profile-btn: var(--color-primary);
+  --color-profile-btn: var(--color-white);
+
+  --bg-global-btn: var(--color-white);
+  --color-global-btn: var(--color-primary);
+
+  --color-button: var(--color-primary);
+  --color-hero-button: var(--color-white);
+  --color-pricing-button: var(--color-white);
+
+  --bg-alternate-button: var(--color-white);
+  --color-alternate-button: var(--color-primary);
+
+  --color-lang-switcher: var(--color-black);
+  --border-lang-switcher: var(--color-black);
+
+  --mobile-menu-bg-container: var(--color-white);
+  --mobile-menu-text: var(--color-text-dark);
+  --mobile-menu-bg-button: var(--color-primary);
+  --mobile-menu-color-button: var(--color-white);
+  --mobile-menu-bg-signup-button: var(--color-white);
+  --mobile-menu-color-signup-button: var(--color-white);
+}
+
+$label_error: #d55353;
+$field_background_disabled: #fff;
