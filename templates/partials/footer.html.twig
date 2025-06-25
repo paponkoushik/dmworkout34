@@ -1,16 +1,17 @@
 <footer class="footer-logo slide-up">
-	<div class="container footer-logo-container">
-		<div class="footer-logo-top">
-			{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
-			{% include 'widgets/footer-link.html.twig' %}
-			{% include 'widgets/footer-contact.html.twig' %}
-		</div>
+	<div class="footer-wrapper">
+		<div class="container footer-logo-container">
+			<div class="footer-logo-top">
+				{% include 'widgets/logo.html.twig' with { position: 'footer' } %}
+				{% include 'widgets/footer-link.html.twig' %}
+				{% include 'widgets/footer-contact.html.twig' %}
+			</div>
 
-		{% include 'widgets/footer-card.html.twig' %}
+			{% include 'widgets/footer-card.html.twig' %}
+		</div>
 	</div>
 	{% include 'widgets/footer-copyright.html.twig' %}
 </footer>
 
 <style>
-	{% include 'partials/custom.css.twig' %}
-</style>
+	{% include 'partials/custom.css.twig' %}</style>
