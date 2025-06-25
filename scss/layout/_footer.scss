@@ -1,14 +1,20 @@
 .footer-logo {
-  display: flex;
-  padding: 4rem 0 0 0;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 3rem;
-  align-self: stretch;
-  background: var(--panel-footer-bg);
-  @include desktop-small{
-    padding: 3rem 0 0 0;
+  .footer-wrapper {
+    background-image: url("../../images/footer-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    padding: 4rem 0 3rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-self: stretch;
+
+    @include desktop-small {
+      padding: 3rem 0;
+    }
   }
 
   .footer-logo-container {
@@ -16,8 +22,6 @@
     flex-direction: column;
     align-items: center;
     gap: 3rem;
-    @include padding(padding-lg);
-
     @include desktop-small {
       //padding: 2rem;
       @include padding(padding-sm);
@@ -28,6 +32,9 @@
       padding: 0;
       justify-content: start;
       align-items: start;
+      @include desktop-small {
+        margin-bottom: 1.5rem;
+      }
     }
 
     .title {
@@ -49,9 +56,10 @@
     a {
       color: var(--panel-text) !important;
       text-decoration: none;
+      display: inline-block;
       @include typography(text-lg, regular);
       @include desktop-small {
-        @include typography(text-md, semibold);
+        @include typography(text-md, regular);
       }
 
       &:hover {
@@ -59,7 +67,6 @@
       }
     }
 
-    
     .footer-logo-top {
       display: flex;
       justify-content: space-between;
@@ -82,12 +89,19 @@
           width: 100%;
         }
 
-        p, a {
+        p,
+        a {
           @include typography(text-lg, regular);
           @include desktop-small {
             @include typography(text-md, regular);
           }
           color: var(--panel-footer-text) !important;
+        }
+
+        p {
+          b {
+            font-weight: 600;
+          }
         }
       }
 
@@ -102,7 +116,6 @@
         align-items: flex-start;
         gap: 0.4375rem;
         align-self: stretch;
-
 
         .menu-item {
           display: flex;
@@ -140,12 +153,12 @@
     padding: 1.5rem 2rem;
     justify-content: center;
     align-items: flex-start;
-    gap: 0.625rem;
+    gap: 1.5rem;
     align-self: stretch;
     // border-top: 1px solid var(--bg-body);
     background: var(--panel-footer-bg);
     color: var(--panel-footer-text);
-    @include desktop-small{
+    @include desktop-small {
       margin-top: 0;
       padding: 2.5rem 1rem;
     }
@@ -156,7 +169,6 @@
         @include typography(text-xs, regular);
       }
       text-align: center;
-
     }
   }
 }
